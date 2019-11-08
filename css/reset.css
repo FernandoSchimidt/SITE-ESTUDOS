@@ -6,11 +6,17 @@
 *:after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open-sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #2c3e50;
+}
+
+:root {
+    font-size: 16px;
 }
 
 a {
@@ -24,4 +30,14 @@ a:hover {
 img {
     max-width: 100%;
     border: 0;
+}
+
+input,
+button,
+textarea {
+    border: 0;
+}
+
+.font-zero {
+    font-size: 0;
 }
