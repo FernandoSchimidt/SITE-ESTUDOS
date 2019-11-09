@@ -4,9 +4,6 @@
     border-top: 6px solid #2c3e50;
 }
 
-
-/* nav-togle */
-
 #nav-toggle {
     border-bottom-left-radius: 8px;
     -webkit-border-bottom-left-radius: 8px;
@@ -55,11 +52,60 @@
     -webkit-transform: rotate(-45deg) translate3d(6px, -5px, 0);
 }
 
+.header-logo {
+    max-width: 180px;
+    padding: 22px 0;
+    float: left;
+}
+
+
+/* menu  */
+
+.header-nav {
+    float: left;
+    padding: 25px 0;
+}
+
+.header-nav ul li {
+    display: inline-block;
+    padding: 0 3px;
+}
+
+.header-nav ul li a {
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.header-nav ul li a:hover {
+    color: #f47933
+}
+
+.header-nav ul li a.active {
+    color: #f47933;
+}
+
+
+/* nav-togle */
+
 
 /* search */
 
 .header-search {
     position: relative;
+    float: right;
+    margin: 18px 0;
+}
+
+.header-search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.header-search input::-moz-placeholder {
+    /*mozila*/
+    color: #fff;
+    opacity: 1;
 }
 
 .header-search input {
@@ -99,15 +145,25 @@
 }
 
 
-/* BREAKPOINTS */
+/* BREAKPOINTS---------------------------------- */
 
 
 /* MAX-WIDTH */
 
-@media(max-width:960px) {
+@media(max-width:959.9px) {
     #nav-toggle,
     .header-redes {
         display: block;
+    }
+    /* header */
+    .header {
+        height: 58px;
+    }
+    /* header logo */
+    .header-logo {
+        max-width: 180px;
+        width: 60%;
+        padding: 12px 0;
     }
     /* Menu */
     .header-collapse {
@@ -117,10 +173,17 @@
         height: 100%;
         z-index: 10;
         padding: 15px;
-        top: 0;
+        top: -100%;
         left: 0;
         transition: top .4s ease;
         -webkit-transition: top .4s ease;
+    }
+    .header-collapse.active {
+        top: 0%;
+    }
+    .header-nav {
+        padding: 25px 0;
+        float: none;
     }
     .header-nav ul li {
         width: 100%;
@@ -129,16 +192,24 @@
     }
     .header-nav ul li a {
         color: #fff;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 1.75rem;
+        font-size: 1.4rem;
     }
     .header-search {
         max-width: 300px;
-        width: 100%;
         margin: 0 auto;
+        float: none;
     }
     .header-search input {
         padding: 15px;
+        text-align: center;
+    }
+}
+
+
+/*   Min-Width--------*/
+
+@media(min-width:960px) {
+    .header-nav {
+        margin-left: 2%;
     }
 }
